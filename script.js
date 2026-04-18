@@ -68,21 +68,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Reveal sections as they scroll into view for a more dynamic feel
-  const observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-    }
-  );
+  // Reveal sections as they scroll into view for a more dynamic feel.
+  // Use a very low threshold so tall sections like blog articles do not stay hidden.
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.01,
+        rootMargin: "0px 0px -6% 0px",
+      }
+    );
 
-  revealItems.forEach(function (item) {
-    observer.observe(item);
-  });
+    revealItems.forEach(function (item) {
+      observer.observe(item);
+    });
+  } else {
+    revealItems.forEach(function (item) {
+      item.classList.add("visible");
+    });
+  }
 });
