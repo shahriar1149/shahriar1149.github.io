@@ -369,6 +369,40 @@ body {
   line-height: 1.18;
 }
 
+.post-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(236, 242, 250, 0.96));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  color: inherit;
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.post-card:hover {
+  border-color: rgba(29, 79, 145, 0.22);
+  box-shadow: 0 24px 55px rgba(12, 24, 44, 0.12);
+  transform: translateY(-6px);
+}
+
+.post-card h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  line-height: 1.18;
+  margin: 0.45rem 0 0.75rem;
+}
+
+.read-more {
+  color: var(--primary);
+  display: inline-block;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
 .explore-card h3,
 .content-card h3,
 .feature-card h3,
@@ -563,6 +597,68 @@ body {
 
 .page-hero-card p {
   color: var(--muted);
+}
+
+.article-hero {
+  padding-bottom: 1.5rem;
+}
+
+.article-intro {
+  max-width: 860px;
+}
+
+.article-title {
+  max-width: 16ch;
+}
+
+.article-meta-line {
+  color: var(--primary);
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.article-shell {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  max-width: 860px;
+  padding: 2rem;
+}
+
+.article-shell p {
+  color: var(--muted);
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+
+.article-shell p + p {
+  margin-top: 1rem;
+}
+
+.article-footer {
+  max-width: 860px;
+  margin-top: 1.5rem;
+}
+
+.post-help {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(231, 239, 249, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  max-width: 860px;
+  padding: 1.7rem;
+}
+
+.help-steps {
+  color: var(--muted);
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-left: 1.2rem;
 }
 
 .footer-grid {
