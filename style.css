@@ -76,13 +76,17 @@ body {
 .contact-details a {
   color: var(--muted);
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
 }
 
 .nav-links a:hover,
 .footer-links a:hover,
 .story-photo a:hover,
 .contact-details a:hover {
+  color: var(--primary);
+}
+
+.nav-links a.is-active {
   color: var(--primary);
 }
 
@@ -263,7 +267,7 @@ body {
   list-style: none;
   display: grid;
   gap: 0.75rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
   color: var(--muted);
 }
 
@@ -292,6 +296,10 @@ body {
 
 .alt-background {
   background: #fcfbf7;
+}
+
+.premium-strip {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(220, 230, 245, 0.3));
 }
 
 .metrics-grid,
@@ -331,6 +339,34 @@ body {
 .explore-card:hover {
   transform: translateY(-4px);
   border-color: rgba(29, 79, 145, 0.22);
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.4rem;
+}
+
+.quick-link-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(235, 242, 250, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  color: inherit;
+  padding: 1.35rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-link-card:hover {
+  box-shadow: 0 24px 50px rgba(12, 24, 44, 0.12);
+  transform: translateY(-6px);
+}
+
+.quick-link-card h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  line-height: 1.18;
 }
 
 .explore-card h3,
@@ -381,7 +417,7 @@ body {
   border-radius: 999px;
   color: var(--text);
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   margin-top: 0.4rem;
@@ -420,7 +456,7 @@ body {
 .story-photo figcaption {
   margin-top: 0.75rem;
   color: var(--muted);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
 }
 
@@ -482,6 +518,53 @@ body {
   padding: 2.5rem 0;
 }
 
+.page-hero {
+  padding: 3.8rem 0 2.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.page-title {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 5vw, 4.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.8rem;
+  max-width: 12ch;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+  font-size: 1.04rem;
+  max-width: 56ch;
+}
+
+.page-hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(230, 238, 249, 0.96));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+
+.page-hero-card h2 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero-card p {
+  color: var(--muted);
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -526,12 +609,14 @@ body {
 @media (max-width: 980px) {
   .metrics-grid,
   .explore-grid,
-  .four-column {
+  .four-column,
+  .quick-links-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-layout,
   .hero-visual,
+  .page-hero-grid,
   .story-feature,
   .split-layout,
   .footer-grid,
@@ -590,7 +675,8 @@ body {
 @media (max-width: 540px) {
   .metrics-grid,
   .explore-grid,
-  .four-column {
+  .four-column,
+  .quick-links-grid {
     grid-template-columns: 1fr;
   }
 
