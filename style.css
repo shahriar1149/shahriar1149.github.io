@@ -641,6 +641,8 @@ body {
 
 .article-figure {
   margin: 2rem 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 460px;
 }
 
 .article-figure img {
